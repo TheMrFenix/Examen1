@@ -16,11 +16,14 @@ function calcularPrimo() {
 }
 function calcularMultiplos() {
     var num = parseInt(document.getElementById("numero2").value);
+    var cont=0;
     for (let i = 0; i < num; i++) {
         if (i%3==0 && i%5==0) {
             document.write(i+(`<br>`))
+            cont++;
         }
     }
+    document.write("la cantidad de numeros multiplos de 3 y 5 es: "+cont)
 }
 function calcularFactorial() {
     var num = parseInt(document.getElementById("numero3").value);
