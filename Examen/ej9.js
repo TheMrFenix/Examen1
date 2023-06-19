@@ -17,7 +17,7 @@ function calcularPrimo() {
 function calcularMultiplos() {
     var num = parseInt(document.getElementById("numero2").value);
     var cont=0;
-    for (let i = 0; i < num; i++) {
+    for (let i = 1; i < num; i++) {
         if (i%3==0 && i%5==0) {
             document.write(i+(`<br>`))
             cont++;
