@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen 2</title>
+</head>
+<body>
+    <p>1- Numeros pares e impares</p>
+    <label for="numero1">Ingresar Numero</label>
+    <input id="numero1" type="number1">
+    <button onclick="calcularParImp()">Resultado</button>
+
+    <p>2- C.R.U.D</p>
+    <label for="numero2">Ingreso</label>
+    <button onclick="calcularCRUD()">Click entrar</button>
+
+    <script>
+        function calcularParImp(){
+            var num = parseInt(document.getElementById("numero1").value);
+            var sumPar=0;
+            for (let i=0; i<=num; i++) {
+                if (i%2 !=0) {
+                    document.writeln(i+`<br>`);
+                } 
+            }
+            for (let i=0; i<=num; i++) {
+                if (i%2 ==0) {
+                    sumPar=sumPar+i;
+                }             
+            }
+            document.writeln("Suma de todos los pares: "+sumPar);
+        }
+        function calcularCRUD(){
+            const Nombres=[];
+            let op=0;
+            do{
+                console.log("Menu Crud");
+                console.log("1- create");
+                console.log("2- read");
+                console.log("3- update");
+                console.log("4- delate");
+                console.log("5- exit");
+                op=prompt("Eliga una opcion: ");
+                if (op==1) {
+                    let lim=prompt("ingrese la cantidad de nombres que desea ingresar: ");
+                    for (let i=0; i<lim; i++) {
+                        let name=prompt("Nombre"+(i+1));
+                        Nombres.push(name);
+                    }
+                }
+                if (op==2) {
+                    for (let i=0; i<Nombres.length; i++) {
+                        console.log(Nombres[i]);
+                    }
+                }
+                if (op==3) {
+                    let up=prompt("elija la posicion que desea actualizar");
+                    ac=Nombres[up];
+                    console.log(ac);
+                    Nombres.pop();
+                    let nu=prompt("ingrese nuevo nombre");
+                    Nombres.push(nu);
+                }
+                if (op==4) {
+                    Nombres.pop();
+                    for (let i=0; i<Nombres.length; i++) {
+                    console.log(Nombres);
+                    }
+                }
+                
+            } while (op!=5);
+        }
+    </script>
+</body>
+</html>
